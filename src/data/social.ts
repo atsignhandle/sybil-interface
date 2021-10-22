@@ -1,8 +1,8 @@
 import { Identities } from './../state/social/reducer'
 // Endpoints
-export const VERIFICATION_WORKER_URL = 'https://sybil-verifier.uniswap.workers.dev'
-const VERIFIED_JSON = 'https://api.github.com/repos/uniswap/sybil-list/contents/verified.json'
-export const TWITTER_WORKER_URL = 'https://twitter-worker.uniswap.workers.dev'
+export const VERIFICATION_WORKER_URL = process.env.REACT_APP_VERIFICATION_WORKER_URL
+const VERIFIED_JSON = process.env.REACT_APP_VERIFIED_JSON || ''
+export const TWITTER_WORKER_URL = process.env.REACT_APP_TWITTER_WORKER_URL
 
 export async function fetchAllIdentities(): Promise<Identities | undefined> {
   try {
